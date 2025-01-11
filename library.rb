@@ -11,7 +11,7 @@ class Library
       puts "Welcome to DPI library!"
       puts "1. Add a books"
       puts "2. List all ebooks"
-      puts "3.Search "
+      puts "3. Search "
       puts "4. Exit"
       print "choose an option"
       option = gets.chomp.to_i
@@ -61,12 +61,13 @@ class Library
     end
   end
 
-  def search_books(book)
+  def search_books(book_title)
     puts "Search ebooks in the library: "
-    if @ebooks.include?(book)
-      @ebooks.search_books(book)
-    else
-      puts "Book not found."
+    @ebooks.each do |ebook|
+      if ebook.title.downcase == book_title.downcase
+        return true
+      end
     end
+    false
   end
 end

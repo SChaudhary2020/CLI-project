@@ -10,7 +10,7 @@ class Ebook
   
 
   def to_s
-    "#{@title} by #{@author} and #{@content}"
+    "title: #{@title} by author: #{@author} and content: #{@content}"
   end
 end
  
